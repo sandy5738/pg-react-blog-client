@@ -37,5 +37,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://tender-lingerie-moth.cyclic.app/api/"
+  "proxy": "https://tender-lingerie-moth.cyclic.app/api/",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }
