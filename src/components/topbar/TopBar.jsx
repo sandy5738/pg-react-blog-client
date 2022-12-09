@@ -1,4 +1,4 @@
-import { PF } from "../../../config";
+import { PF } from "../../config";
 
 import { useContext } from "react";
 import { Link } from "react-router-dom";

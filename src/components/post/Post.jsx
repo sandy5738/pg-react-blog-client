@@ -1,4 +1,4 @@
-import { PF } from "../../../config";
+import { PF } from "../../config";
 import { Link } from "react-router-dom";
 import "./Post.css";
 

@@ -1,5 +1,5 @@
 // import axios from "axios";
-import { axiosInstance } from "../../../config";
+import { axiosInstance } from "../../config";
 
 import { useContext } from "react";
 import { useState } from "react";

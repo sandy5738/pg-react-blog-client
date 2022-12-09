@@ -1,4 +1,4 @@
-import { axiosInstance } from "../../../config";
+import { axiosInstance } from "../../config";
 
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
