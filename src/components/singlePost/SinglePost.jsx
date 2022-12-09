@@ -1,4 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
+import { PF, axiosInstance } from "../../../config";
+
 import { useEffect, useState, useContext } from "react";
 import { Context } from "../../context/Context";
 
@@ -9,7 +11,7 @@ const SinglePost = () => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
-  const PF = "http://localhost:5000/images/";
+  // const PF = "http://localhost:5000/images/";
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -17,7 +19,7 @@ const SinglePost = () => {
 
   useEffect(() => {
     const getPost = async () => {
-      const response = await axios.get("/posts/" + path);
+      const response = await axiosInstance.get("/posts/" + path);
       setPost(response.data);
       setTitle(response.data.title);
       setDesc(response.data.desc);
@@ -27,7 +29,7 @@ const SinglePost = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${post._id}`, {
+      await axiosInstance.delete(`/posts/${post._id}`, {
         data: { username: user.username },
       });
       window.location.replace("/");
@@ -38,7 +40,7 @@ const SinglePost = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`/posts/${post._id}`, {
+      await axiosInstance.put(`/posts/${post._id}`, {
         username: user.username,
         title,
         desc,

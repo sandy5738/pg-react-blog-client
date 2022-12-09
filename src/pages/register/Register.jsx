@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import { axiosInstance } from "../../../config";
 
 import "./Register.css";
 
@@ -14,7 +15,7 @@ const Register = () => {
     event.preventDefault();
     setError(false);
     try {
-      const response = await axios.post("/auth/register", {
+      const response = await axiosInstance.post("/auth/register", {
         username,
         email,
         password,

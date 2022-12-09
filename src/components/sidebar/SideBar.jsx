@@ -1,4 +1,5 @@
-import axios from "axios";
+import { axiosInstance } from "../../../config";
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./SideBar.css";
@@ -7,7 +8,7 @@ const SideBar = () => {
   const [cats, setCats] = useState([]);
   useEffect(() => {
     const getCats = async () => {
-      const response = await axios.get("/categories");
+      const response = await axiosInstance.get("/categories");
       setCats(response.data);
     };
     getCats();

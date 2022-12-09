@@ -1,4 +1,5 @@
-import axios from "axios";
+import { axiosInstance } from "../../../config";
+
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../../components/header/Header";
@@ -12,7 +13,7 @@ export default function Home() {
   // console.log(location)
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await axios.get("/posts" + search);
+      const response = await axiosInstance.get("/posts" + search);
       setPosts(response.data);
     };
     fetchPosts();

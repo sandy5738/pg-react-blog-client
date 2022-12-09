@@ -1,8 +1,8 @@
+import { PF } from "../../../config";
 import { Link } from "react-router-dom";
 import "./Post.css";
 
 const Post = ({ post }) => {
-  const PF = "http://localhost:5000/images/";
   return (
     <div className="post">
       {post.photo && <img className="post-img" src={PF + post.photo} alt="" />}

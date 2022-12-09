@@ -1,4 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
+import { axiosInstance } from "../../../config";
+
 import { useContext } from "react";
 import { useState } from "react";
 import { Context } from "../../context/Context";
@@ -23,13 +25,13 @@ const Write = () => {
       data.append("file", file);
       newPost.photo = fileName;
       try {
-        await axios.post("./upload", data);
+        await axiosInstance.post("./upload", data);
       } catch (error) {
         console.log(error);
       }
     }
     try {
-      const res = await axios.post("/posts", newPost);
+      const res = await axiosInstance.post("/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (error) {
       console.log(error);

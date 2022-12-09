@@ -1,4 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
+import { PF, axiosInstance } from "../../../config";
+
 import { useContext, useState } from "react";
 import SideBar from "../../components/sidebar/SideBar";
 import { Context } from "../../context/Context";
@@ -12,7 +14,7 @@ const Settings = () => {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images";
+  // const PF = "http://localhost:5000/images";
 
   const handleSubmit = async (event) => {
     dispatch({ type: "UPDATE_START" });
@@ -30,13 +32,16 @@ const Settings = () => {
       data.append("file", file);
       updatedUser.profilepicture = fileName;
       try {
-        await axios.post("./upload", data);
+        await axiosInstance.post("./upload", data);
       } catch (error) {
         console.log(error);
       }
     }
     try {
-      const response = await axios.put("/users/" + user._id, updatedUser);
+      const response = await axiosInstance.put(
+        "/users/" + user._id,
+        updatedUser
+      );
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: response.data });
     } catch (error) {
