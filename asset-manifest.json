@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pg-react-blog-client/static/css/main.1cdc690e.css",
+    "main.js": "/pg-react-blog-client/static/js/main.cf7f570f.js",
+    "index.html": "/pg-react-blog-client/index.html",
+    "main.1cdc690e.css.map": "/pg-react-blog-client/static/css/main.1cdc690e.css.map",
+    "main.cf7f570f.js.map": "/pg-react-blog-client/static/js/main.cf7f570f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1cdc690e.css",
+    "static/js/main.cf7f570f.js"
+  ]
+}
