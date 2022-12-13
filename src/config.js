@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "https://tender-lingerie-moth.cyclic.app/api/",
+  baseURL: "https://pg-blog-api.onrender.com/api/",
 });
 
-export const PF = "https://tender-lingerie-moth.cyclic.app/images/";
+export const PF = "https://pg-blog-api.onrender.com/images/";
